@@ -5,7 +5,7 @@ async function runApp()
   try {
     // Use the connection string copied from the cloud console
     // and stored in connstring.txt file from Step 2 of this tutorial
-    connection = await oracledb.getConnection({ user: "admin", password: "Mamba@2406789", connectionString: "(description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.uk-london-1.oraclecloud.com))(connect_data=(service_name=g68b001ea404cca_oracle23ai_high.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))" });
+    connection = await oracledb.getConnection({ user: "admin", password: , connectionString: "(description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.uk-london-1.oraclecloud.com))(connect_data=(service_name=g68b001ea404cca_oracle23ai_high.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))" });
     
     // Create a table
     await connection.execute(`begin execute immediate 'drop table nodetab'; exception when others then if sqlcode <> -942 then raise; end if; end;`);
